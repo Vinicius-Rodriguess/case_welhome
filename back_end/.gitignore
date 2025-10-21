@@ -27,6 +27,7 @@ Thumbs.db
 
 # Prisma generated client
 prisma/generated/
+generated
 
 # Optional: editor config
 .vscode/
