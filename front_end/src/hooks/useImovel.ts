@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useEffect } from "react";
 import type { Imovel } from "../types/imovel";
 import { getAllImoveis, createImovel, updateImovel, removeImovel } from "../services/imovelService";
