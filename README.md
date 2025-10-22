@@ -1,4 +1,4 @@
-# 🏡 Welhome: Gerenciamento de Imóveis (CRUD)
+# 🏡 Welhome: Gerenciamento de Imóveis
 
 O **Welhome** é uma aplicação completa (Full Stack) desenvolvida para gerenciar um catálogo de imóveis. Ela implementa as funcionalidades básicas de **CRUD** (Create, Read, Update, Delete) de forma eficiente e modular.
 
@@ -43,7 +43,7 @@ Siga os passos abaixo para colocar o Welhome no ar em menos de um minuto.
 ### 1. Clonar o Repositório
 
 ```bash
-git clone [URL_DO_SEU_REPOSITORIO]
+git clone https://github.com/Vinicius-Rodriguess/case_welhome.git
 cd welhome
 ```
 
