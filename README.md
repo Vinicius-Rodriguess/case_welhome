@@ -44,7 +44,7 @@ Siga os passos abaixo para colocar o Welhome no ar em menos de um minuto.
 
 ```bash
 git clone https://github.com/Vinicius-Rodriguess/case_welhome.git
-cd welhome
+cd case_welhome
 ```
 
 ### 2. Executar o Projeto
@@ -74,7 +74,7 @@ docker-compose logs -f
 | Frontend (Next.js) | 3000  | [http://localhost:3000](http://localhost:3000) |
 | Backend (API)      | 8080  | [http://localhost:8080](http://localhost:8080) |
 
-**Acesso em Produção (AWS EC2):**
+### Acesso em Produção (AWS EC2):
 
 * Você também pode acessar o frontend pelo link do deploy na EC2:
 
