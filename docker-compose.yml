@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  backend:
+    container_name: welhome_backend
+    build:
+      context: ./back_end
+    ports:
+      - "8080:8080"
+    environment:
+      # Mantemos o DATABASE_URL para o SQLite
+      DATABASE_URL: "file:./dev.db" 
+    volumes:
+      #  Não montamos mais ./back_end:/app para evitar sobrescrever node_modules e Prisma Client.
+      # Montamos apenas o volume nomeado para garantir a persistência do arquivo SQLite.
+      - welhome-db-data:/app/dev.db 
+    networks:
+      - welhome-network
+    # Lembre-se de adicionar 'CMD ["npm", "start"]' ao final do Dockerfile do backend!
+
+  frontend:
+    container_name: welhome_frontend
+    build:
+      context: ./front_end
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      # O frontend usa o nome do serviço 'backend' para se comunicar dentro da rede Docker.
+      NEXT_PUBLIC_API_URL: "http://backend:8080"
+    depends_on:
+      - backend
+    networks:
+      - welhome-network
+
+networks:
+  welhome-network:
+    driver: bridge
+
+volumes:
+  # Volume nomeado para persistir o banco de dados SQLite do backend
+  welhome-db-data:
+    driver: local
